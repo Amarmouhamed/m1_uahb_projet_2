@@ -1,0 +1,18 @@
+<h1 class="text-primary">Les livres </h1>
+<div>
+    <input type="text" [(ngModel)]="recherche">
+</div>
+<div *ngFor="let un_livre of api.les_livres">
+    {{un_livre.titre+" : "+un_livre.prix}}
+</div>
+
+
+<app-add-livre></app-add-livre>
+<hr>
+<h1 class="mt-3">Manipulation du localStorage</h1>
+<div class="d-flex justify-content-around">
+    <button class="btn btn-success" (click)="api.save_user()">Sauvegarder</button>
+    <button class="btn btn-info" (click)="api.get_user()">Récupèrer</button>
+    <button class="btn btn-danger" (click)="api.delete_user()">Supprimer</button>
+    <button class="btn btn-danger" (click)="api.update_user()">Modifier</button>
+</div>
